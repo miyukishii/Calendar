@@ -1,38 +1,157 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+body {
+  font-family: 'Avenir', sans-serif;
+  width: 100%;
+  display:flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: gray;
+}
+
+.calendar-container {
+  width: 1000px;
+  height: 500px;
+  padding: 20px;
+  background-color: white;
+}
+.fc  {
+  height: 500px;
+}
+.fc-scroller {
+  overflow: auto !important;
+}
+
+.fc-scroller::-webkit-scrollbar {
+  width: 8px;
+  background-color: #aaa; 
+  border-radius: 12px;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border: 0px;
+}
+
+.fc-scroller::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: rgb(7,43,39);
+}
+
+.fc-theme-standard th {
+  border: none;
+}
+
+.fc-header-toolbar > .fc-toolbar-chunk:nth-child(2)::before {
+  font-size: 1.75em;
+  content: 'Agenda';
+  font-weight: 600;
+}
+
+.fc .fc-toolbar {
+  padding: 10px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+  background-color: rgb(0,80,66);
+  color: #e4e1e0;
+  margin-bottom: 0;
+}
+
+.fc .fc-button-primary {
+  background-color: transparent;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.fc .fc-prev-button:hover {
+  background-color: transparent;
+  border: none !important;
+  transform: scale(1.2);
+}
+
+.fc .fc-next-button:hover {
+  background-color: transparent;
+  border: none !important;
+  transform: scale(1.2);
+}
+
+.fc .fc-prev-button:active {
+  background-color: transparent;
+  border: none;
+}
+
+.fc .fc-next-button:active {
+  background-color: transparent;
+  border: none;
+}
+
+.fc .fc-button .fc-icon {
+    font-size: 2rem;
+}
+
+.fc .fc-today-button {
+  background-color:  rgb(7,43,39);
+  padding: 2px 10px !important;
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+.fc .fc-today-button:disabled {
+  opacity: 50%;
+}
+
+.fc .fc-col-header-cell-cushion {
+  padding: 5px;
+  font-size: 18px;
+}
+
+.fc-col-header  {
+  margin: 5px 0;
+}
+
+.fc-scrollgrid-section-header  {
+  background-color: rgb(7,43,39);
+  color:#bbb5b5;
+}
+
+.fc .fc-button {
+  padding: 0;
+}
+
+.fc-button:active {
+  background-color: transparent !important;
+}
+
+.fc-button:focus {
+  box-shadow: none !important;
+}
+
+
+.fc-day-today {
+  background-color: rgb(0,175,147);
+  color: #fff;
+  border-radius: 10px;
+  margin: 50px;
+
+}
+
+.fc-timegrid-event-harness>.fc-timegrid-event {
+  background-color: rgb(9, 54, 71) !important;
+}
+
+.fc-v-event {
+  border: none;
+}
+
+.fc-timegrid-axis {
+  background-color: rgb(7,43,39);
+}
+.fc-timegrid-slot-label-cushion {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fc-timegrid-col.fc-day-today 
+ {
+    background: #9c9c9b17 !important;
+    border: none !important;
 }
